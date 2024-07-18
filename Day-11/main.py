@@ -35,11 +35,7 @@ def deal_cards(cards, player_cards, computer_cards):
 
 def get_score(cards):
     """Returns the score of the current deck selected."""
-    score = 0
-    for card in cards:
-        score += card
-
-    return score
+    return sum(cards)
 
 
 def check_for_ace(cards):
@@ -65,6 +61,12 @@ def add_new_card(player, cards):
     """Adds a new card to player or computer's cards."""
     random_card = random.choice(cards)
     player.append(random_card)
+
+
+def is_blackjack(cards):
+    """Checks to see if the hand of a player is a blackjack hand."""
+    if 11 in cards and 10 in cards and len(cards) == 2:
+        return True
 
 
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
@@ -93,7 +95,7 @@ def play_game():
             computer_score = get_score(computer_cards)
             print(f"\tPlayers' cards: {player_cards}. Current score: {player_score}")
             print(f"\tComputer's first card: {computer_cards}")
-            if player_score == 21:
+            if is_blackjack(player_cards):
                 print(
                     f"\tPlayer Final Cards: {player_cards}. Final score: {player_score}"
                 )
@@ -101,7 +103,7 @@ def play_game():
                 print("You win with Blackjack!")
                 game_playing = False
                 break
-            elif computer_score == 21:
+            elif is_blackjack(computer_cards):
                 print(
                     f"\tPlayer Final Cards: {player_cards}. Final score: {player_score}"
                 )
