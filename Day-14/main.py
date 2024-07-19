@@ -25,6 +25,15 @@ def compare_people(person_a, person_b):
             return False
 
 
+def format_person_name(person):
+    """Format people's name in a format that is easily readable."""
+    person_name = person["name"]
+    person_desc = person["description"]
+    person_location = person["country"]
+
+    return f"{person_name}, {person_desc}, from {person_location}."
+
+
 def game():
     """Start the Higher Lower Game."""
     person_a = generate_person()
@@ -38,13 +47,10 @@ def game():
         print(art.logo)
         if score > 0:
             print(f"That was correct, your score is now {score}.")
-        print(
-            f"Compare A: {person_a["name"]}, {person_a["description"]} from {person_a["country"]}."
-        )
+        print(f"Compare A: {format_person_name(person_a)}")
         print(art.vs)
-        print(
-            f"Against B: {person_b["name"]}, {person_b["description"]} from {person_b["country"]}."
-        )
+        print(f"Against B: {format_person_name(person_b)}")
+        format_person_name(person_b)
         if compare_people(person_a, person_b):
             score += 1
             person_a = person_b
