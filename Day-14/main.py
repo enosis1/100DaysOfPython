@@ -29,6 +29,8 @@ def game():
     """Start the Higher Lower Game."""
     person_a = generate_person()
     person_b = generate_person()
+    while person_a == person_b:
+        person_b = generate_person()
     score = 0
 
     while True:
