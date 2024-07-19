@@ -50,7 +50,6 @@ def game():
         print(f"Compare A: {format_person_name(person_a)}")
         print(art.vs)
         print(f"Against B: {format_person_name(person_b)}")
-        format_person_name(person_b)
         if compare_people(person_a, person_b):
             score += 1
             person_a = person_b
