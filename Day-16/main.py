@@ -1,7 +1,7 @@
 from os import system
 
 from coffee_maker import CoffeeMaker
-from menu import Menu, MenuItem
+from menu import Menu
 from money_machine import MoneyMachine
 
 coffee_machine = CoffeeMaker()
