@@ -13,7 +13,6 @@ for question in question_data["results"]:
 
 quiz = QuizBrain(question_bank)
 
-print(len(quiz.questions_list))
 while quiz.still_has_questions():
     quiz.next_question()
 
