@@ -65,9 +65,10 @@ print(x, y)
 # TURTLE
 timmy.speed(0)
 timmy.width(10)  # Sets the width of the drawings, even if it's the pen or the dot
+timmy.hideturtle()
 timmy.penup()  # Does not allow the pen to be down
 def timmy_teleport():
-    timmy.teleport(-x * 0.55, -y + 100)
+    timmy.teleport(-x * 0.55, -y + 100 )
 timmy_teleport()
 for _ in range(1, 101):
     random_color = random.choice(colors)
