@@ -19,14 +19,14 @@ def get_posts():
     except requests.exceptions.RequestException as e:
         # Handle any network-related errors or exceptions
         print(f"Error: {e}")
-        return None 
+        return None
 
 
 def main():
     posts = get_posts()
     if posts:
         print("Generating a random list of questions...")
-    else: 
+    else:
         print("Failed to fetch posts from API.")
     return posts
 
